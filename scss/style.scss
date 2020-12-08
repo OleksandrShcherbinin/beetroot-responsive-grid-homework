@@ -1,0 +1,210 @@
+@import "normalize";
+@import "fonts";
+@import "mixins";
+
+.header {
+    width: 40%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-box-shadow: 17px 18px 15px 6px #848484;
+    box-shadow: 17px 18px 15px 6px #848484;
+    @media only screen and (max-width: 767px){
+        width: 80%;
+    }
+    &-nav {
+        height: 100%;
+        background-color: #5a6268;
+        opacity: 0.8;
+        &-menu {
+            height: 100%;
+            margin: 0 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            &__link {
+                opacity: 1;
+                font-size: 3vh;
+                color: black;
+                font-weight: bold;
+            }
+            &__link:hover {
+                border-bottom: 4px solid black;
+            }
+        }
+    }
+}
+
+.main {
+    width: 100%;
+    min-height: 1600px;
+    background-color: #e2e7ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &-loading {
+        display: inline;
+        margin-top: 87px;
+        h5 {
+            @include title(#99a5b0, 13px, 400, 13px, 0.33px);
+            display: inline;
+            vertical-align: 9px;
+        }
+    }
+    &-container {
+        max-width: 1066px;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto;
+        grid-gap: 20px;
+        @media only screen and (max-width: 1200px) {
+            grid-template-columns: auto auto;
+            grid-template-rows: auto auto auto;
+        }
+        @media only screen and (max-width: 767px) {
+            grid-template-columns: auto;
+            grid-template-rows: auto auto auto auto auto;
+        }
+        &-content {
+            background: #ffffff;
+            height: 540px;
+            position: relative;
+            &__date {
+                @include date(#818181, 13px, 500, 28px 0 28px 27px, 0.33px)
+            }
+            &__title {
+                @include title(#1d1d1d, 22px, 900, 27px, 0.55px);
+                position: absolute;
+                top: 313px;
+            }
+            &__avatar {
+                position: absolute;
+                left: 28px;
+                bottom: 25px;
+            }
+        }
+        &-content--big {
+            width: 100%;
+            height: 540px;
+            background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(255,255,255,0.2) 100%), url("../img/car.png") center / cover;
+            grid-row-start: 1;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            @media only screen and (max-width: 767px) {
+                width: 360px;
+                grid-column-end: 2;
+            }
+            &__date {
+                @include date(#818181, 13px, 500,0 0 0 46px, 0.33px);
+            }
+
+            &__title {
+                width: 62%;
+                text-transform: uppercase;
+                @include title(#ffffff, 30px, 700, 43px, 0.75px);
+                margin-bottom: 62px;
+            }
+        }
+    }
+}
+
+.second {
+    width: 100%;
+    min-height: 2424px;
+    .second-body {
+        width: 88.5%;
+        margin: 0 auto 85px auto;
+        min-height: 1409px;
+        display: grid;
+        grid-template-rows: auto auto auto;
+        grid-template-columns: auto auto auto;
+        grid-gap: 57px;
+        @media only screen and (max-width: 1600px){
+            grid-template-rows: auto auto auto auto;
+            grid-template-columns: auto auto;
+            justify-content: center;
+
+        }
+        @media only screen and (max-width: 1100px){
+            grid-template-rows: auto auto auto auto auto auto;
+            grid-template-columns: auto;
+
+        }
+        .second-body-pic {
+            @media only screen and (max-width: 567px) {
+                &__img {
+                    width: 320px;
+                }
+            }
+        }
+        .second-body-pic--big {
+            grid-row-start: 1;
+            grid-row-end: 3;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            @media only screen and (max-width: 1100px) {
+                grid-column-end: 2;
+            }
+            @media only screen and (max-width: 1100px) {
+                &__img {
+                    width: 462px;
+                }
+            }
+            @media only screen and (max-width: 567px) {
+                &__img {
+                    width: 320px;
+                }
+            }
+        }
+    }
+    .second-instagram {
+        width: 100%;
+        min-height: 850px;
+        background-color: #1a1a1a;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 0;
+        @media only screen and (max-width: 1200px){
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+        }
+        @media only screen and (max-width: 676px){
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr;
+        }
+        .second-instagram-pic {
+            height: 422px;
+        }
+        .second-instagram-pic:first-child {
+            background: linear-gradient(0deg, rgba(26,26,26,0.5) 100%, rgba(255,255,255,1) 100%), url("../img/7.jpg") center / cover;
+        }
+        .second-instagram-pic:nth-child(2) {
+            background: linear-gradient(0deg, rgba(26,26,26,0.5) 100%, rgba(255,255,255,1) 100%), url("../img/8.jpg") center / cover;
+        }
+        .second-instagram-pic:nth-child(3) {
+            background: linear-gradient(0deg, rgba(26,26,26,0.5) 100%, rgba(255,255,255,1) 100%), url("../img/9.jpg") center / cover;
+        }
+        .second-instagram-pic:nth-child(4) {
+            background: linear-gradient(0deg, rgba(26,26,26,0.5) 100%, rgba(255,255,255,1) 100%), url("../img/10.jpg") center / cover;
+        }
+        .second-instagram-pic:nth-child(5) {
+            background: linear-gradient(0deg, rgba(26,26,26,0.5) 100%, rgba(255,255,255,1) 100%), url("../img/11.jpg") center / cover;
+        }
+        .second-instagram-pic:nth-child(6) {
+            background: linear-gradient(0deg, rgba(26,26,26,0.5) 100%, rgba(255,255,255,1) 100%), url("../img/12.jpg") center / cover;
+        }
+        .second-instagram-pic:nth-child(7) {
+            background: linear-gradient(0deg, rgba(26,26,26,0.5) 100%, rgba(255,255,255,1) 100%), url("../img/13.jpg") center / cover;
+        }
+        .second-instagram-pic:last-child {
+            background: linear-gradient(0deg, rgba(26,26,26,0.5) 100%, rgba(255,255,255,1) 100%), url("../img/14.jpg") center / cover;
+        }
+    }
+}
